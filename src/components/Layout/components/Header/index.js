@@ -8,6 +8,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
+import AccountItem from '../AccountItem';
 
 const cx = classNames.bind(styles);
 console.log(images.logo);
@@ -17,8 +18,8 @@ function Header() {
 
     useEffect(() => {
         setTimeout(() => {
-            setSearchResult([1, 2, 3]);
-        }, 3000);
+            setSearchResult([]);
+        }, 0);
     }, []);
 
     return (
@@ -29,11 +30,15 @@ function Header() {
                     interactive
                     visible={searchResult.length > 0}
                     render={(attrs) => (
-                        <PopperWrapper>
-                            <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                                Kết quả
-                            </div>
-                        </PopperWrapper>
+                        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+                            <PopperWrapper>
+                                <h4 className={cx('search-title')}>Accouts</h4>
+                                <AccountItem />
+                                <AccountItem />
+                                <AccountItem />
+                                <AccountItem />
+                            </PopperWrapper>
+                        </div>
                     )}
                 >
                     <div className={cx('search')}>
