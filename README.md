@@ -2,6 +2,7 @@ setTimeout(()=>{
 debugger
 },2000)
 ffc
+react snip
 
 # Getting Started with Create React App
 
